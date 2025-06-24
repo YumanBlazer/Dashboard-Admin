@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 248 250 252; /* Light gray background like the image */
+    --foreground: 51 65 85; /* Slate gray text */
+
+    --muted: 241 245 249; /* Very light gray */
+    --muted-foreground: 100 116 139; /* Medium gray text */
+
+    --popover: 255 255 255; /* White popover */
+    --popover-foreground: 51 65 85; /* Dark gray text */
+
+    --card: 255 255 255; /* Pure white cards */
+    --card-foreground: 51 65 85; /* Dark gray text */
+
+    --border: 226 232 240; /* Light border */
+    --input: 255 255 255; /* White input background */
+
+    --primary: 100 116 139; /* slate-500 */
+    --primary-foreground: 255 255 255; /* White text on primary */
+
+    --secondary: 241 245 249; /* Very light blue-gray */
+    --secondary-foreground: 51 65 85; /* Dark text */
+
+    --accent: 240 249 255; /* Very light sky blue */
+    --accent-foreground: 51 65 85; /* Dark text */
+
+    --destructive: 239 68 68; /* Red */
+    --destructive-foreground: 255 255 255; /* White text */
+
+    --ring: 14 165 233; /* Sky blue ring */
+
+    --radius: 0.75rem; /* Slightly more rounded corners */
+  }
+
+  .dark {
+    --background: 248 250 252; /* Keep light theme even in dark mode */
+    --foreground: 51 65 85;
+
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
+
+    --popover: 255 255 255;
+    --popover-foreground: 51 65 85;
+
+    --card: 255 255 255;
+    --card-foreground: 51 65 85;
+
+    --border: 226 232 240;
+    --input: 255 255 255;
+
+    --primary: 14 165 233;
+    --primary-foreground: 255 255 255;
+
+    --secondary: 241 245 249;
+    --secondary-foreground: 51 65 85;
+
+    --accent: 240 249 255;
+    --accent-foreground: 51 65 85;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+
+    --ring: 14 165 233;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-700;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    min-height: 100vh;
+  }
+
+  /* Card styling to match the clean design */
+  .bg-card {
+    background-color: white !important;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    border: 1px solid rgb(226 232 240);
+  }
+
+  /* Ensure proper text colors */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-slate-800;
+    font-weight: 600;
+  }
+
+  p,
+  span,
+  div {
+    @apply text-slate-600;
+  }
+
+  /* Muted text styling */
+  .text-muted-foreground {
+    @apply text-slate-500;
+  }
+
+  /* Primary button styling */
+  .bg-primary {
+    @apply bg-sky-500 hover:bg-sky-600;
+  }
+
+  /* Success/Green elements */
+  .text-green-600 {
+    @apply text-emerald-600;
+  }
+
+  .bg-green-100 {
+    @apply bg-emerald-50;
+  }
+
+  .text-green-800 {
+    @apply text-emerald-800;
+  }
+
+  /* Warning/Yellow elements */
+  .bg-yellow-100 {
+    @apply bg-amber-100;
+  }
+
+  .text-yellow-800 {
+    @apply text-amber-700;
+  }
+
+  /* Error/Red elements */
+  .text-red-600 {
+    @apply text-red-500;
+  }
+
+  .bg-red-100 {
+    @apply bg-red-50;
+  }
+
+  /* Blue accent elements */
+  .bg-blue-100 {
+    @apply bg-slate-100;
+  }
+
+  .text-blue-800 {
+    @apply text-slate-700;
+  }
+
+  /* Sidebar styling */
+  .sidebar-nav {
+    background-color: white;
+    border-right: 1px solid rgb(226 232 240);
+  }
+
+  /* Card hover effects */
+  .card-hover:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transform: translateY(-1px);
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Progress bar styling */
+  .progress-bar {
+    @apply bg-sky-500;
+  }
+
+  /* Badge styling */
+  .badge-success {
+    @apply bg-emerald-100 text-emerald-800;
+  }
+
+  .badge-warning {
+    @apply bg-amber-100 text-amber-800;
+  }
+
+  .badge-error {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .badge-info {
+    @apply bg-sky-100 text-sky-800;
+  }
+
+  .text-orange-600 {
+    @apply text-orange-500;
+  }
+
+  .bg-orange-100 {
+    @apply bg-orange-50;
+  }
+
+  .text-orange-800 {
+    @apply text-orange-700;
+  }
+
+  .bg-cyan-100 {
+    @apply bg-cyan-50;
+  }
+
+  .text-cyan-800 {
+    @apply text-cyan-700;
+  }
+
+  .text-cyan-600 {
+    @apply text-cyan-500;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(248 250 252);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(203 213 225);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(148 163 184);
+}
